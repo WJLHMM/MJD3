@@ -1,10 +1,6 @@
 /** @jsx jsx */
-
 import React from 'react';
 import { jsx } from '@emotion/core';
-import { List } from 'antd-mobile';
-import LazyLoad from 'react-lazyload';
-
 import {
   categorybodywrapstyle,
   categorylistwrapstyle,
@@ -12,34 +8,18 @@ import {
 
 } from '@/pages/categorylist/categorybody/categorybodystyle';
 
-// const { Item } = List;
-
-export const CategorybodyWrap = (props) => (
+export const CategorybodyWrap = (p0) => (
   <div
     className="categorybodywrap"
     css={categorybodywrapstyle}
-    {...props}
+    {...p0}
   />
 );
 
-export const CategoryListWrap = (props) => (
+export const CategoryListWrap = (p1) => (
   <div
     className="categorylistwrap"
     css={categorylistwrapstyle}
-    {...props}
+    {...p1}
   />
-);
-
-export const CategoryListHeader = () => (
-  <div
-    className="categorylistheader"
-    css={categorylistheaderstyle}
-  >
-    <h3>热门推荐</h3>
-    <div className="ranklist">
-      <i className="iconfont icon-paihangbang">&#xe707;</i>
-      <span>排行榜</span>
-      <i className="iconfont icon-arrow-right">&#xe601;</i>
-    </div>
-  </div>
 );

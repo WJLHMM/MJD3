@@ -38,7 +38,7 @@ class TabBarUi extends PureComponent {
       <div
         id="footwrap"
         style={{
-          position: 'fixed', width: '100%', maxWidth: 1080, bottom: 0, height: 53.33,
+          position: 'fixed', width: '100%', maxWidth: 1080, bottom: 0, height: 50, zIndex:100,
         }}
       >
         <TabBar
@@ -72,7 +72,8 @@ class TabBarUi extends PureComponent {
               this.setState({
                 selectedTab: 'blueTab',
               }, () => {
-                this.props.history.push('/categorylist')
+                this.props.history.push('/categorylist/WQR2006')
+                // window.location.reload();
               });
             }}
           />

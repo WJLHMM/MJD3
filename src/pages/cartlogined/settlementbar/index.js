@@ -33,11 +33,6 @@ const SettlementBarUi = (props) => {
       },
     )
 
-    // const handleskucheckedstatusaction = useCallback(
-    //   (isAllChecked) => {
-    //      dispatch(actionCreators.skucheckedstatusaction(isAllChecked));
-    //   },
-    // )
     const totalcheckboxselect = () => {
         const totalinputdoms = document.getElementsByTagName('input')
         const reg1 = /^\d+$/g
@@ -47,8 +42,6 @@ const SettlementBarUi = (props) => {
             obj.checked = !checkboxtotal.current.checked
             handletoggleinputitemchecka(username, obj.id, !checkboxtotal.current.checked)
         })
-        // currentsubitemcheckstatus1 = currentuserskuinfolist.every((subitem) => subitem.checked === true)
-        // handleskucheckedstatusaction(currentsubitemcheckstatus1)
     }
     return (
         <div className="settlementbarwrap" css={settlementbarwrapstyle}>

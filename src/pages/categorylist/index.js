@@ -12,12 +12,11 @@ import { jsx, css } from '@emotion/core'
 import {
   CategorybodyWrap,
   CategoryListWrap,
-  CategoryListHeader,
 } from '@/pages/categorylist/categorybody/categorybody';
 
 import CategoryListNavUi from '@/pages/categorylist/categorybody/categorylistnavui';
-
 import CategoryBodyUi from '@/pages/categorylist/categorybody/categorybodyui'
+// import CategoryBodyUi0 from '@/pages/categorylist/categorybody/categorybodyui0'
 
 const LazySearchHeaderUi = React.lazy(() => import(/* webpackChunckName:"header" */'@/publicui/searchheader'));
 const LazyTabBarUi = React.lazy(() => import(/* webpackChunckName:"footer" */'@/publicui/footer'));
@@ -46,7 +45,6 @@ class Categorylist extends PureComponent {
         css={css`
           width:100%;
           max-width:1080px;
-          color:#666;
           height:100%;
           margin:0 auto;
           background:#fff;
@@ -56,7 +54,6 @@ class Categorylist extends PureComponent {
         <CategorybodyWrap>
           <CategoryListNavUi />
           <CategoryListWrap>
-            <CategoryListHeader />
             <Switch>
               <Route path="/categorylist/:cid" exact component={CategoryBodyUi} />
               <Redirect to="/categorylist/WQR2006" />

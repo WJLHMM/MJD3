@@ -1,18 +1,20 @@
 /** @jsx jsx */
 
 import React, {
-  PureComponent, useState, useEffect, useMemo, useRef,
+  Fragment, useState, useEffect, useMemo, useRef,
 } from 'react';
 import { withRouter } from 'react-router-dom';
 import { jsx, css } from '@emotion/core';
 import { List, Grid } from 'antd-mobile';
 import LazyLoad from 'react-lazyload';
+import CategoryListHeader from '@/pages/categorylist/categorybody/categorylistheader';
 
 const { Item } = List;
 
 let data;
 
 const CategoryBodyUi = (props) => {
+  const { cid } = props.match.params;
   const b1 = {
     WQR2006: [
       ['https://img11.360buyimg.com/focus/s140x140_jfs/t1/117080/5/10502/18158/5ef0103eE416ae569/898a7ac882ba6c63.jpg',
@@ -411,40 +413,60 @@ const CategoryBodyUi = (props) => {
         '手柄/方向盘'],
     ],
   };
-
-  const { cid } = props.match.params;
+  const clientHeight = document.documentElement.clientHeight || document.body.clientHeight;
   if (b1[cid]) {
     data = b1[cid].map((_val, i) => ({
       icon: _val[0],
       text: _val[1],
     }));
+  } else {
+    data = []
   }
-
-  const clientHeight = document.documentElement.clientHeight || document.body.clientHeight;
-
-  return (
-    <Grid
-      data={data}
-      columnNum={3}
-      hasLine={false}
-      renderItem={(dataItem) => (
-        <div
-          id={dataItem.text}
-          style={{ padding: '0px 2rem 0px 0px', width: '100%', height: '100%' }}
-          onClick={() => {
-            props.history.push(`/productionlist/${dataItem.text}`);
+  if (data.length === 0) {
+     return  (
+      <>
+        <CategoryListHeader />
+        <div style={{
+           top:'300px',
+           left:'140px',
+           color:'red',
+           position:'absolute',
+           textAlign:'center',
+           height:'40px',
+           lineHeight:'20px',
           }}
         >
-          <img src={dataItem.icon} style={{ width: '60%', height: '56%' }} alt="" />
-          <p style={{
-            height: '40%', fontSize: '14px', textAlign: 'center', paddingTop: '10px', color: '#333',
-          }}
-          >
-            {dataItem.text}
-          </p>
+          除前三项,其他数据正在建设中，敬请期待
         </div>
-      )}
-    />
+      </>
+    )
+  }
+  return (
+      <>
+        <CategoryListHeader />
+        <Grid
+          data={data}
+          columnNum={3}
+          hasLine={false}
+          renderItem={(dataItem) => (
+            <div
+              id={dataItem.text}
+              style={{ padding: '0px 2rem 0px 0px', width: '100%', height: '100%' }}
+              onClick={() => {
+                props.history.push(`/productionlist/${dataItem.text}`);
+              }}
+            >
+              <img src={dataItem.icon} style={{ width: '60%', height: '56%' }} alt="" />
+              <p style={{
+                height: '40%', fontSize: '14px', textAlign: 'center', paddingTop: '10px', color: '#333',
+              }}
+              >
+                {dataItem.text}
+              </p>
+            </div>
+          )}
+        />
+      </>
   );
 };
 

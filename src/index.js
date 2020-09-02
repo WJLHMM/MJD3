@@ -7,6 +7,7 @@ import ReactDOM from 'react-dom';
 import App from '@/App';
 import '@/statics/style.css';
 import '@/statics/iconfont/iconfont.css';
+import 'swiper/swiper-bundle.css';
 import '@/statics/setantdmobilestyle.css';
 
 ReactDOM.render(<App />, document.getElementById('root'));
