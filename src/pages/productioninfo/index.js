@@ -4,19 +4,19 @@ import { withRouter } from 'react-router-dom';
 import styles from '@/pages/productioninfo/style.scss'
 import SplitLineUi from '@/publicui/splitline'
 
-const LazyImgHeaderUi = React.lazy(() => import('@/publicui/header'))
-const LazyImgShowViewUi = React.lazy(() => import('@/pages/productioninfo/imgview'))
-const LazyBuyInfoUi = React.lazy(() => import('@/pages/productioninfo/buyinfo'))
-const LazyDiscountUi = React.lazy(() => import('@/pages/productioninfo/discount'))
-const LazyDiscountUi2 = React.lazy(() => import('@/pages/productioninfo/discount2'))
-const LazyDiscountUi3 = React.lazy(() => import('@/pages/productioninfo/discount3'))
-const LazyDiscountUi4 = React.lazy(() => import('@/pages/productioninfo/discount4'))
-const LazyDiscountUi5 = React.lazy(() => import('@/pages/productioninfo/discount5'))
-const LazyCommentUi = React.lazy(() => import('@/pages/productioninfo/comment'))
-const LazyCommentlistUi = React.lazy(() => import('@/pages/productioninfo/commentlist'))
-const LazySelectedBar = React.lazy(() => import('@/pages/productioninfo/selectedbar'))
-const LazyQABarUi = React.lazy(() => import('@/pages/productioninfo/qabar'))
-const LazySellerInfoUi = React.lazy(() => import('@/pages/productioninfo/sellerinfo'))
+const LazyImgHeaderUi = React.lazy(() => import(/* webpackChunkName:"hearder" */'@/publicui/header'))
+const LazyImgShowViewUi = React.lazy(() => import(/* webpackChunkName:"imgview" */'@/pages/productioninfo/imgview'))
+const LazyBuyInfoUi = React.lazy(() => import(/* webpackChunkName:"buyinfo" */'@/pages/productioninfo/buyinfo'))
+const LazyDiscountUi = React.lazy(() => import(/* webpackChunkName:"discount" */'@/pages/productioninfo/discount'))
+const LazyDiscountUi2 = React.lazy(() => import(/* webpackChunkName:"discount2" */'@/pages/productioninfo/discount2'))
+const LazyDiscountUi3 = React.lazy(() => import(/* webpackChunkName:"discount3" */'@/pages/productioninfo/discount3'))
+const LazyDiscountUi4 = React.lazy(() => import(/* webpackChunkName:"discount4" */'@/pages/productioninfo/discount4'))
+const LazyDiscountUi5 = React.lazy(() => import(/* webpackChunkName:"discount5" */'@/pages/productioninfo/discount5'))
+const LazyCommentUi = React.lazy(() => import(/* webpackChunkName:"comment" */'@/pages/productioninfo/comment'))
+const LazyCommentlistUi = React.lazy(() => import(/* webpackChunkName:"commentlist" */'@/pages/productioninfo/commentlist'))
+const LazySelectedBar = React.lazy(() => import(/* webpackChunkName:"selectedbar" */'@/pages/productioninfo/selectedbar'))
+const LazyQABarUi = React.lazy(() => import(/* webpackChunkName:"qabar" */'@/pages/productioninfo/qabar'))
+const LazySellerInfoUi = React.lazy(() => import(/* webpackChunkName:"sellerinfo" */'@/pages/productioninfo/sellerinfo'))
 
 @withRouter
 class ProductionInfo extends PureComponent {

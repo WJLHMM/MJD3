@@ -18,8 +18,8 @@ import CategoryListNavUi from '@/pages/categorylist/categorybody/categorylistnav
 import CategoryBodyUi from '@/pages/categorylist/categorybody/categorybodyui'
 // import CategoryBodyUi0 from '@/pages/categorylist/categorybody/categorybodyui0'
 
-const LazySearchHeaderUi = React.lazy(() => import(/* webpackChunckName:"header" */'@/publicui/searchheader'));
-const LazyTabBarUi = React.lazy(() => import(/* webpackChunckName:"footer" */'@/publicui/footer'));
+const LazySearchHeaderUi = React.lazy(() => import(/* webpackChunkName:"header" */'@/publicui/searchheader'));
+const LazyTabBarUi = React.lazy(() => import(/* webpackChunkName:"footer" */'@/publicui/footer'));
 
 @withRouter
 class Categorylist extends PureComponent {

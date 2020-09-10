@@ -23,7 +23,7 @@ module.exports = {
   settings: {
     'import/resolver': { // 该设置解决eslint报错，无法识别webpack中配置的别名路径@
       webpack: {
-        config: './webpack.config.js',
+        config: './webpack.base.config.js',
       },
     },
   },
@@ -37,6 +37,7 @@ module.exports = {
     "import/no-cycle": 0,
     "import/no-unresolved": 0,
     "import/prefer-default-export": 0,
+    "import/no-extraneous-dependencies": ["error", { devDependencies: true }],
     "react/prop-types": 0,
     "react/jsx-indent": 0,
     "react/button-has-type": 0,

@@ -2,7 +2,7 @@ import React, { PureComponent, Suspense } from 'react';
 // import { jsx, css } from '@emotion/core';
 import { Provider } from 'react-redux';
 import {
-  BrowserRouter, Route, Switch, Redirect,
+  HashRouter, Route, Switch, Redirect,
 } from 'react-router-dom';
 import { PersistGate } from 'redux-persist/integration/react';
 
@@ -10,25 +10,63 @@ import storeinfo from '@/store';
 import ErrorBoundary from '@/publicui/errorBoundary';
 import LoadingshowUi from '@/publicui/loadingshow';
 
-const LazyHome = React.lazy(() => import('@/pages/home'));
-const LazyCategorylist = React.lazy(() => import(/* webpackChunckName:"categorylist" */'@/pages/categorylist'));
-const LazyCartUnlogin = React.lazy(() => import(/* webpackChunckName:"cartunlogin" */'@/pages/cartunlogin'));
-const LazyCartLogined = React.lazy(() => import(/* webpackChunckName:"cartlogined" */'@/pages/cartlogined'));
-const LazyProductionList = React.lazy(() => import(/* webpackChunckName:"productionlist" */'@/pages/productionlist'));
-const LazyProductionInfo = React.lazy(() => import(/* webpackChunckName:"productioninfo" */'@/pages/productioninfo'));
-const LazyLogin = React.lazy(() => import('@/pages/login'));
-const LazyLogin2 = React.lazy(() => import('@/pages/login2'));
-const LazyNotFound = React.lazy(() => import('@/pages/notfound'));
-// const LazyHooksexample = React.lazy(() => import(/* webpackChunckName:"hooksexample" */'@/pages/hooksexample'));
-const LazyMyinfo = React.lazy(() => import(/* webpackChunckName:"myinfo" */'@/pages/myinfo'));
-const Test = React.lazy(() => import(/* webpackChunckName:"test" */'@/test'));
+const LazyHome = React.lazy(() => import(
+  /*webpackChunkName: "home"*/
+  /*webpackPrefetch: true*/
+  './pages/home'
+));
+const LazyCategorylist = React.lazy(() => import(
+  /*webpackPrefetch: true*/
+  /* webpackChunkName: "categorylist" */
+  '@/pages/categorylist'
+));
+const LazyCartUnlogin = React.lazy(() => import(
+  /* webpackChunkName: "cartunlogin" */
+  /*webpackPrefetch: true*/
+  '@/pages/cartunlogin'
+));
+const LazyCartLogined = React.lazy(() => import(
+  /* webpackChunkName: "cartlogined" */
+  /*webpackPrefetch: true*/
+ '@/pages/cartlogined'
+));
+const LazyProductionList = React.lazy(() => import(
+  /* webpackChunkName: "productionlist" */
+  /*webpackPrefetch: true*/
+  '@/pages/productionlist'
+));
+const LazyProductionInfo = React.lazy(() => import(
+  /* webpackChunkName: "productioninfo" */
+  /*webpackPrefetch: true*/
+  '@/pages/productioninfo'
+));
+const LazyLogin = React.lazy(() => import(
+  /* webpackChunkName: "login" */
+  /*webpackPrefetch: true*/
+  '@/pages/login'
+));
+const LazyLogin2 = React.lazy(() => import(
+  /* webpackChunkName: "login2" */
+  /*webpackPrefetch: true*/
+  '@/pages/login2'
+));
+const LazyNotFound = React.lazy(() => import(
+  /* webpackChunkName: "notfound" */
+  /*webpackPrefetch: true*/
+  '@/pages/notfound'
+));
+const LazyMyinfo = React.lazy(() => import(
+  /* webpackChunkName: "myinfo" */
+  /*webpackPrefetch: true*/
+  '@/pages/myinfo'
+));
 
 class App extends PureComponent {
   render() {
     return (
       <Provider store={storeinfo.store}>
         <PersistGate persistor={storeinfo.persistor}>
-          <BrowserRouter>
+          <HashRouter>
             <ErrorBoundary>
               <Suspense fallback={<LoadingshowUi />}>
                 <Switch>
@@ -41,13 +79,12 @@ class App extends PureComponent {
                   <Route path="/cartlogined/:userid" component={LazyCartLogined} />
                   <Route path="/productionlist/:productcategory" component={LazyProductionList} />
                   <Route path="/productioninfo/:category/:sku" component={LazyProductionInfo} />
-                  <Route path="/test" exact component={Test} />
                   <Redirect to="/home" />
                   <Route path="*" exact component={LazyNotFound} />
                 </Switch>
               </Suspense>
             </ErrorBoundary>
-          </BrowserRouter>
+          </HashRouter>
         </PersistGate>
       </Provider>
     );

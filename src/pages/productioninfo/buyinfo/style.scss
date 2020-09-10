@@ -106,11 +106,6 @@
     }
 	    
 }
-
-// #icon-renminbi,icon-xin {
-// 	display: block;
-// 	width: 100%;
-// } 
 .productiondetail {
 	height: 42px;/*totle height*/
     width: 100%;
@@ -123,7 +118,7 @@
     -webkit-line-clamp: 2;/*show the overflow line num*/
     -webkit-box-orient: vertical;
     position:relative;
-    // word-wrap:break-word; 
+    /*word-wrap:break-word;*/
 }
 
 /*more lines overflow compatiable firefox IE*/

@@ -74,10 +74,6 @@ export const listyle = css`
   }    
 `;
 
-// export const active = css`
-//   color:red;
-//   background:#fff;
-// `
 export const categorylistwrapstyle = css`
   ${flexlayout};
   ${flexlayoutV};

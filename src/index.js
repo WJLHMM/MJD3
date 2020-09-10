@@ -10,4 +10,15 @@ import '@/statics/iconfont/iconfont.css';
 import 'swiper/swiper-bundle.css';
 import '@/statics/setantdmobilestyle.css';
 
+/*PWA setup*/
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js').then((registration) => {
+            console.log('service-worker registed')
+        }).catch((error) => {
+            console.log('service-worker register error')
+        })
+    })
+}
+
 ReactDOM.render(<App />, document.getElementById('root'));

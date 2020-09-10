@@ -4,11 +4,11 @@ import { jsx, css } from '@emotion/core'
 import React, { Component, Fragment, Suspense } from 'react';
 import { withRouter } from 'react-router-dom'
 
-const LazyHeaderUi = React.lazy(() => import('@/publicui/header'))
-const LazyLoginTips = React.lazy(() => import('@/pages/cartunlogin/logintip'))
-const LazySecondkillUi = React.lazy(() => import('@/pages/home/secondkill'))
-const LazyRecommendadvUi = React.lazy(() => import('@/pages/home/recommendadv'))
-const LazyTabBarUi = React.lazy(() => import('@/publicui/footer'))
+const LazyHeaderUi = React.lazy(() => import(/* webpackChunkName:"header" */'@/publicui/header'))
+const LazyLoginTips = React.lazy(() => import(/* webpackChunkName:"logintip" */'@/pages/cartunlogin/logintip'))
+const LazySecondkillUi = React.lazy(() => import(/* webpackChunkName:"secondkill" */'@/pages/home/secondkill'))
+const LazyRecommendadvUi = React.lazy(() => import(/* webpackChunkName:"recommendadv" */'@/pages/home/recommendadv'))
+const LazyTabBarUi = React.lazy(() => import(/* webpackChunkName:"footer" */'@/publicui/footer'))
 
 @withRouter
 class Cartunlogin extends Component {

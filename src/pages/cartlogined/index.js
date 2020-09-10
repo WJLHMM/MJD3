@@ -3,12 +3,12 @@ import { jsx, css } from '@emotion/core'
 import React, { Component, Fragment } from 'react';
 import { withRouter } from 'react-router-dom'
 
-const LazyHeaderUi = React.lazy(() => import('@/publicui/header'))
-const LazyAddressBarUi = React.lazy(() => import('@/pages/cartlogined/addressbar'))
-const LazySelectionUi = React.lazy(() => import('@/pages/cartlogined/selection'))
-const LazyRecommendadvUi = React.lazy(() => import('@/pages/home/recommendadv'))
-const LazySettlementBarUi = React.lazy(() => import('@/pages/cartlogined/settlementbar'))
-const LazyTabBarUi = React.lazy(() => import('@/publicui/footer'))
+const LazyHeaderUi = React.lazy(() => import(/* webpackChunkName:"header" */'@/publicui/header'))
+const LazyAddressBarUi = React.lazy(() => import(/* webpackChunkName:"addressbar" */'@/pages/cartlogined/addressbar'))
+const LazySelectionUi = React.lazy(() => import(/* webpackChunkName:"selection" */'@/pages/cartlogined/selection'))
+const LazyRecommendadvUi = React.lazy(() => import(/* webpackChunkName:"recommendadv" */'@/pages/home/recommendadv'))
+const LazySettlementBarUi = React.lazy(() => import(/* webpackChunkName:"settlementbar" */'@/pages/cartlogined/settlementbar'))
+const LazyTabBarUi = React.lazy(() => import(/* webpackChunkName:"footer" */'@/publicui/footer'))
 
 @withRouter
 class CartLogined extends Component {

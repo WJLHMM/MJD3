@@ -48,7 +48,7 @@ export const loginbuttontyle = css`
   span {
     color:rgba(255,255,255,1);
     font-size:14px;
-    display:block;//添加该式样，可以保证IE下的offset值变化，使得垂直居中对齐可行
+    display:block;
   } 
 `;
 
