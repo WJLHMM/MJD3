@@ -27,8 +27,8 @@ const baseConfig = {
     ],
      output: {
       path: path.join(__dirname, '/dist'),
-      filename: '[name].[contenthash:6].js',
-      chunkFilename: '[name].[contenthash:6].chunk.js',
+      filename: '[name].[hash:6].js',
+      chunkFilename: '[name].[hash:6].chunk.js',
       publicPath: "/", /* 在配置二级更多极路由时候 刷新会出现 404的报错，是因为使用BrowserRouter需后台后台配合，在开发环境中配置本行和 historyApiFallback: true */
     },
     module: { // 所有第三方，模块的配置规则
